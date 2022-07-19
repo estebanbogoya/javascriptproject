@@ -1,3 +1,10 @@
+
+const productos = [{ articulo: "Balon Mundial", precio: 200 },
+{ articulo: "Camiseta FC Barcelona", precio: 99 },
+{ articulo: "Camiseta Real Madrid", precio: 85 },
+{ articulo: "Camiseta AC Milan", precio: 75.5 }
+]
+
 let usuario = prompt("Ingresa tu nombre de Usuario.")
 let claveAceptada = 1997
 let ingreso = false
@@ -30,6 +37,14 @@ for (let i = 2; i >= 0; i--) {
 }
 
 if (ingreso == true) {
+
+    let preguntaUsuario = prompt("Deseas ver que productos tenemos disponibles? Presiona '1' si quieres continuar").toUpperCase;
+    
+    while (preguntaUsuario == "1") {
+        alert("Tenemos disponible: " + productos.articulo + ", por un precio de $" + productos.precio + "usd.");
+        preguntaUsuario = "Presiona '2' Para continuar."
+    }
+
     let articulos = prompt("Selecciona lo que quieres comprar: \n1. Balon Adidas del Mundial de Futbol. \n2. Camiseta del FC Barcelona \n3. Camiseta del Real Madrid. \n4. Camiseta del AC Milan.\n5. Consultar el valor de mi compra. \nPresiona 'X' si quieres salir.");
     let saldo = 0
     while (articulos != "X") {
